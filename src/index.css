@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Noto+Serif+Devanagari:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-display: "Cinzel", serif;
+  --font-devanagari: "Noto Serif Devanagari", serif;
+
+  --color-saffron: #C8860A;
+  --color-saffron-light: #E8A020;
+  --color-saffron-pale: #FFF8EC;
+  --color-deep-green: #1E3A22;
+  --color-sage: #4A6E4C;
+  --color-sage-light: #7FA880;
+  --color-cream: #FAF6EF;
+  --color-warm-white: #FFFDF8;
+  --color-brown: #5C3D1E;
+  --color-gold: #B8960C;
+  --color-text-dark: #1A1208;
+  --color-text-mid: #4A3520;
+  --color-text-light: #7A6248;
+  --color-border: #E8D5B0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-text-dark font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-saffron text-white py-2.5 px-6 md:py-3.5 md:px-10 font-display text-[10px] md:text-[11px] tracking-[2px] rounded-sm transition-all duration-300 hover:bg-saffron-light hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-outline {
+    @apply bg-transparent text-text-mid border border-border py-2.5 px-6 md:py-3.5 md:px-10 font-display text-[10px] md:text-[11px] tracking-[2px] rounded-sm transition-all duration-300 hover:border-saffron hover:text-saffron;
+  }
+  .section-tag {
+    @apply font-display text-[10px] tracking-[3px] text-saffron uppercase mb-2.5 block;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-text-dark leading-tight mb-2;
+  }
+  .section-hindi {
+    @apply font-devanagari text-base md:text-xl text-sage mb-3.5;
+  }
+  .section-divider {
+    @apply w-14 h-[2px] bg-gradient-to-r from-transparent via-saffron to-transparent mx-auto;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-saffron); border-radius: 3px; }
